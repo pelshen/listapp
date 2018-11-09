@@ -1,0 +1,10 @@
+<app-modal>
+    <h2 modal-header>Confirm Delete</h2>
+    <div modal-body>
+      <div>Are you sure you want to delete {{item.name}}?</div>
+    </div>
+    <div modal-footer class="right-aligned-buttons">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel')">Cancel</button>
+        <button type="button" ngbAutofocus class="btn btn-danger" (click)="modal.close('yes')">Yes</button>
+    </div>
+  </app-modal>

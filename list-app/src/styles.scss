@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+
+// Toastr styles
+@import '~ngx-toastr/toastr.css';
+@import '~ngx-toastr/toastr-bs4-alert';
+
+@import '~octicons/build/build.css';
+
+.keyword-badge {
+    font-size: 100%;
+}
+
+.badge-remove {
+    cursor: pointer;
+}
+
+.toast-success {
+    background-color: #10d83f;
+}
+
+.icon {
+    margin-left: 8px;
+    position: relative;
+    top: 2px;
+
+    &.icon-trashcan {
+        top: 3px;
+    }
+}
+
+.right-aligned-buttons {
+    button:not(:first-child) {
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,25 @@
+<div>
+  <h1>Ciders list</h1>
+  
+  <table class="table table-hover" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Keywords</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td><ul class="list-inline"><li *ngFor="let keyword of item.keywords" class=" list-inline-item keyword-badge badge badge-primary">{{keyword}}</li></ul></td>
+        <td>
+          <button class="btn btn-warning row-button" (click)="edit(item)">Edit<app-svg-icon iconName="pencil"></app-svg-icon></button>
+          <button class="btn btn-danger row-button" (click)="delete(item)">Delete<app-svg-icon iconName="trashcan"></app-svg-icon></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
