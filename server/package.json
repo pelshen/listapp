@@ -2,10 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "babel-watch server.js"
+    "dev": "babel-watch lib/server.js",
+    "build": "babel lib -d dist"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,10 @@
     "babel-preset-env": "^1.7.0",
     "babel-watch": "^2.0.7",
     "dotenv": "^6.1.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.11"
   }
 }
