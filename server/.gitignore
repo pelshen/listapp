@@ -1,3 +1,8 @@
-**/node_modules/**
+# Dependencies
+node_modules/
 
+# Environment variable file
 .env
+
+# Babel processed files
+dist/
