@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import * as $ from 'jquery';
 import 'datatables.net';
 import 'datatables.net-bs4';
+import 'datatables.net-responsive';
+import 'datatables.net-responsive-bs4';
 import * as octicons from 'octicons';
 
 import { ItemService } from '../../services/item/item.service';
@@ -80,12 +82,13 @@ export class ListTableComponent implements OnInit {
       const table: any = $('table');
       if (!(<any>$.fn).dataTable.isDataTable(table)) {
         this.dataTable = table.DataTable({
-          'columns': [
+          columns: [
             null,
             null,
             null,
-            { 'orderable': false }
-          ]
+            { orderable: false, responsivePriority: 1 }
+          ],
+          responsive: true
         });
       } else {
         this.dataTable.draw('full-hold');

@@ -2,6 +2,7 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 @import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css";
 
 // Toastr styles
 @import '~ngx-toastr/toastr.css';
@@ -11,6 +12,7 @@
 
 .keyword-badge {
     font-size: 100%;
+    margin-bottom: 3px;
 }
 
 .badge-remove {
@@ -25,6 +27,10 @@
     margin-left: 8px;
     position: relative;
     top: 2px;
+
+    @include media-breakpoint-down(sm) {
+        margin-left: 0;
+    }
 
     &.icon-trashcan {
         top: 3px;
