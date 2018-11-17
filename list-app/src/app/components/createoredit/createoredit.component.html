@@ -9,12 +9,12 @@
 
       <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" class="form-control" id="description" [(ngModel)]="model.description" name="description">
+        <textarea rows="3" class="form-control" id="description" [(ngModel)]="model.description" name="description"></textarea>
       </div>
 
       <div class="form-group">
         <label for="keywords">Keywords <span class="small">(type a word and press enter)</span></label>
-        <input type="text" #keywordadd class="form-control" id="keywords" (keyup.enter)="addKeyword(keywordadd.value); keywordadd.value=''">
+        <input type="text" #keywordadd class="form-control" id="keywords" autocapitalize="none" (keyup.enter)="addKeyword(keywordadd.value); keywordadd.value=''">
         <div class="mt-3">
           <ul class="list-inline">
             <li *ngFor="let keyword of model.keywords" class="list-inline-item keyword-badge badge badge-primary">{{keyword}}<a class="badge-remove ml-1" (click)="removeKeyword(keyword)">×</a></li>
