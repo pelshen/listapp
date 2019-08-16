@@ -10,7 +10,14 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 let dbUri = 'mongodb://' + config.db.username + ':' + config.db.password + '@' + config.db.host + ':' + config.db.port + '/' + config.db.name;
-mongoose.connect(dbUri, {useNewUrlParser: true});
+var options = {
+     // sets how many times to try reconnecting
+    reconnectTries: Number.MAX_VALUE,
+    // sets the delay between every retry (milliseconds)
+    reconnectInterval: 1000,
+    useNewUrlParser: true
+}
+mongoose.connect(dbUri, options);
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB database connection established successfully!');
